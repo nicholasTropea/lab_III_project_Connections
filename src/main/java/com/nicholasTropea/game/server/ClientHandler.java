@@ -40,6 +40,7 @@ public class ClientHandler implements Runnable {
      * 
      * @throws IOException In caso di errore di rete
      */
+    @Override
     public void run() {
         try (
             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
