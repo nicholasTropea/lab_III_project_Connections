@@ -21,3 +21,12 @@
 # Sistema operativo
 .DS_Store
 Thumbs.db
+
+# Downloaded dependencies
+lib/*.jar
+lib/gson-*.jar
+
+# Build
+classes/
+docs/
+*.class
