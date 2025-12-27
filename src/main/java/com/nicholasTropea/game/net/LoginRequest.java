@@ -5,25 +5,38 @@ import com.google.gson.annotations.SerializedName;
 
 /**
  * Richiesta di login di un giocatore.
+ * Riceve una {@link LoginResponse}.
  * 
  * JSON atteso:
+ * <pre<{@code
  * {
  *    "operation" : "login",
  *    "username" : "STRING",
  *    "psw" : "STRING"
- * } 
+ * }
+ * }</pre>
+ * 
+ * Errori possibili: "psw errata", "username non registrato"
  */
 public class LoginRequest {
+    /** Operazione effettuata */
     @SerializedName("operation")
     private final String operation = "login";
 
+    /** Nome utente dell'account in cui loggarsi */
     @SerializedName("username")
     private final String username;
 
+    /** Password dell'account in cui loggarsi */
     @SerializedName("psw")
     private final String password;
 
-    // Costruttore
+    /**
+     * Costruttore.
+     * 
+     * @param username nome utente dell'account in cui loggarsi
+     * @param password password dell'account in cui loggarsi
+     */
     public LoginRequest(String username, String password) {
         this.username = Objects.requireNonNull(username, "Required username").trim();
         this.password = Objects.requireNonNull(password, "Required password");
