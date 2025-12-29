@@ -1,6 +1,7 @@
 package com.nicholasTropea.game.net;
 
 import com.google.gson.annotations.SerializedName;
+import java.util.List;
 
 import com.nicholasTropea.game.model.LeaderboardRecord;
 
