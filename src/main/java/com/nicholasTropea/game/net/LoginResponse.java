@@ -13,7 +13,7 @@ import java.util.List;
  *    "error" : STRING,
  *    "gameId" : INT,
  *    "words" : LIST<STRING>,
- *    "correctGroups" : LIST<LIST<STRING>>,
+ *    "guessedGroups" : LIST<LIST<STRING>>,
  *    "timeLeft" : LONG,
  *    "errors" : INT,
  *    "score" : INT
@@ -42,8 +42,8 @@ public class LoginResponse {
     private final List<String> words;
 
     /** Lista di gruppi di parole già indovinate della partita corrente */
-    @SerializedName("correctGroups")
-    private final List<List<String>> correctGroups;
+    @SerializedName("guessedGroups")
+    private final List<List<String>> guessedGroups;
 
     /** Tempo rimanente della partita corrente in millisecondi */
     @SerializedName("timeLeft")
@@ -63,7 +63,7 @@ public class LoginResponse {
         String error,
         Integer gameId,
         List<String> words,
-        List<List<String>> correctGroups,
+        List<List<String>> guessedGroups,
         Long timeLeft,
         Integer errors,
         Integer  score
@@ -72,7 +72,7 @@ public class LoginResponse {
         this.error = error;
         this.gameId = gameId;
         this.words = words != null ? List.copyOf(words) : null;
-        this.correctGroups = correctGroups != null ? List.copyOf(correctGroups) : null;
+        this.guessedGroups = guessedGroups != null ? List.copyOf(guessedGroups) : null;
         this.timeLeft = timeLeft;
         this.errors = errors;
         this.score = score;
@@ -83,7 +83,7 @@ public class LoginResponse {
      * 
      * @param gameId id della partita corrente
      * @param words lista di parole della partita corrente
-     * @param correctGroups lista di gruppi di parole già indovinate della partita corrente
+     * @param guessedGroups lista di gruppi di parole già indovinate della partita corrente
      * @param timeLeft tempo rimanente della partita corrente in millisecondi
      * @param errors numero di errori già commessi nella partita corrente
      * @param score punteggio ottenuto nella partita corrente
@@ -93,7 +93,7 @@ public class LoginResponse {
     public static LoginResponse success(
         Integer gameId,
         List<String> words,
-        List<List<String>> correctGroups,
+        List<List<String>> guessedGroups,
         Long timeLeft,
         Integer errors,
         Integer score
@@ -101,7 +101,7 @@ public class LoginResponse {
         // Check leggero
         validateSuccess(gameId, words);
 
-        return new LoginResponse(true, null, gameId, words, correctGroups, timeLeft, errors, score);
+        return new LoginResponse(true, null, gameId, words, guessedGroups, timeLeft, errors, score);
     }
 
     /**
@@ -141,7 +141,7 @@ public class LoginResponse {
     public String getError() { return this.error; }
     public Integer getGameId() { return this.gameId; }
     public List<String> getWords() { return this.words; }
-    public List<List<String>> getCorrectGroups() { return this.correctGroups; }
+    public List<List<String>> getGuessedGroups() { return this.guessedGroups; }
     public Long getTimeLeft() { return this.timeLeft; }
     public Integer getErrors() { return this.errors; }
     public Integer getScore() { return this.score; }
