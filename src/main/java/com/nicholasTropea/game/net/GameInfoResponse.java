@@ -21,7 +21,7 @@ import java.util.List;
  * }
  * }</pre>
  * 
- * Errori possibili: 
+ * Errori possibili: "utente non loggato"
  */
 public class GameInfoResponse {
     /** true se richiesta avvenuta con successo, false altrimenti */

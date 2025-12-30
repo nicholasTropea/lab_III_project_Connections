@@ -17,7 +17,7 @@ import com.nicholasTropea.game.model.LeaderboardRecord;
  * }
  * }</pre>
  * 
- * Errori possibili: "username non registrato"
+ * Errori possibili: "username non registrato", "utente non loggato"
  */
 public class LeaderboardResponse {
     /** true se richiesta avvenuta con successo, false altrimenti */

@@ -13,7 +13,7 @@ import com.google.gson.annotations.SerializedName;
  * }
  * }</pre>
  * 
- * Errori possibili: "errore interno del server"
+ * Errori possibili: "utente non loggato"
  */
 public class LogoutResponse {
     /** true se richiesta avvenuta con successo, false altrimenti */

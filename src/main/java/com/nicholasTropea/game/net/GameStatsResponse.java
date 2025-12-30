@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
  * }
  * }</pre>
  * 
- * Errori possibili: "id inesistente"
+ * Errori possibili: "id inesistente", "utente non loggato"
  */
 public class GameStatsResponse {
     /** true se richiesta avvenuta con successo, false altrimenti */

@@ -20,7 +20,7 @@ import java.util.List;
  * }
  * }</pre>
  * 
- * Errori possibili: "nome inesistente", "psw incorretta"...
+ * Errori possibili: "nome inesistente", "psw incorretta", "connessione già loggata"
  * 
  * @see RegisterResponse per il formato di registrazione
  */

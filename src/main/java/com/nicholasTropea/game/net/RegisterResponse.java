@@ -13,7 +13,7 @@ import com.google.gson.annotations.SerializedName;
  * }
  * }</pre>
  * 
- * Errori possibili: Nome già registrato
+ * Errori possibili: "username già registrato"
  * 
  * @see LoginResponse per il formato di login
  */
