@@ -34,7 +34,11 @@ public class ClientMain {
 
             String respLine = in.readLine();
             RegisterResponse resp = gson.fromJson(respLine, RegisterResponse.class);
-            System.out.println(resp.getStatus() + " - " + resp.getMessage());
+
+            if (resp.isSuccess()) System.out.println("Request correctly handled.");
+            else {
+                System.out.println("Request failed with error: " + resp.getError());
+            }
         }
         catch (IOException e) { e.printStackTrace(); }
     }
