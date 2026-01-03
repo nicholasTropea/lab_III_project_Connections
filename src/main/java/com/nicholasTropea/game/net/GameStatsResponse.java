@@ -161,5 +161,5 @@ public class GameStatsResponse {
     public Integer getFinishedPlayers() { return this.finishedPlayers; }
     public Integer getWonPlayers() { return this.wonPlayers; }
     public Integer getTotalPlayers() { return this.totalPlayers; }
-    public Integer getAverageScore() { return this.averageScore; }
+    public Long getAverageScore() { return this.averageScore; }
 }
