@@ -16,7 +16,7 @@ import com.google.gson.annotations.SerializedName;
  *      "finishedPlayers" : INT,
  *      "wonPlayers" : INT,
  *      "totalPlayers" : INT,
- *      "averageScore" : LONG
+ *      "averageScore" : FLOAT
  * }
  * }</pre>
  * 
@@ -57,7 +57,7 @@ public class GameStatsResponse {
 
     /** Punteggio medio ottenuto dai giocatori (null se active=true) */
     @SerializedName("averageScore")
-    private final Long averageScore;
+    private final Float averageScore;
 
     /** Costruttore privato */
     private GameStatsResponse(
@@ -69,7 +69,7 @@ public class GameStatsResponse {
         Integer finishedPlayers,
         Integer wonPlayers,
         Integer totalPlayers,
-        Long averageScore
+        Float averageScore
     ) {
         this.success = success;
         this.error = error;
@@ -104,7 +104,7 @@ public class GameStatsResponse {
         Integer finishedPlayers,
         Integer wonPlayers,
         Integer totalPlayers,
-        Long averageScore
+        Float averageScore
     ) {
         if (finishedPlayers == null || wonPlayers == null) {
             throw new IllegalArgumentException("finishedPlayers and wonPlayers cannot be null");
@@ -161,5 +161,5 @@ public class GameStatsResponse {
     public Integer getFinishedPlayers() { return this.finishedPlayers; }
     public Integer getWonPlayers() { return this.wonPlayers; }
     public Integer getTotalPlayers() { return this.totalPlayers; }
-    public Long getAverageScore() { return this.averageScore; }
+    public Float getAverageScore() { return this.averageScore; }
 }
